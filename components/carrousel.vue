@@ -1,34 +1,16 @@
 <script setup lang="ts">
+import img1 from '@/assets/1.jpg';
+import img2 from '@/assets/2.jpg';
+import img3 from '@/assets/3.jpeg';
+import img4 from '@/assets/4.jpg';
 
-const paths = [
-    '@/assets/1.jpg',
-    '@/assets/2.jpg',
-    '@/assets/3.jpeg',
-    '@/assets/4.jpg'
-]
+const paths = [img3, img2, img1, img4];
 </script>
 
 <template>
-    <div class="m-auto my-40 w-3/4 h-fit p-10 shadow-2xl rounded-3xl">
-        <v-carousel>
-            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover></v-carousel-item>
-
-            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
-
-            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover></v-carousel-item>
+    <div class="m-auto w-full h-fit px-10 shadow-2xl rounded-b-3xl shadow-violet-500">
+        <v-carousel class="my-16">
+            <v-carousel-item v-for="(path, index) in paths" :key="index" :src="path" cover></v-carousel-item>
         </v-carousel>
     </div>
-
-
-
-
-    <div class="m-auto my-40 w-3/4 h-fit p-10 shadow-2xl rounded-3xl">
-        <v-carousel>
-            <v-carousel-item v-for="path in paths" :src="path" cover></v-carousel-item>
-        </v-carousel>
-    </div>
-
 </template>
-
-
-<style scoped></style>
