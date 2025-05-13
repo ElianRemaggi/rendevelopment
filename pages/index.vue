@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import Lenis from 'lenis';
+const lenis = new Lenis({
+    autoRaf: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+    console.log(e);
+});
 
 const services = [
     {
@@ -25,7 +34,7 @@ const services = [
 <template>
 
 
-    <div class="w-full pb-16">
+    <div class="wrapper w-full pb-16 ">
         <div class="md:py-12 lg:py-16 xl:py-20 ">
             <h1 id="tittle"
                 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center text-white font-bold py-16 mt-1">
