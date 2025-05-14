@@ -50,16 +50,14 @@ const services = [
 
     <div class="wrapper w-full pb-16 ">
         <div class="md:py-12 lg:py-16 xl:py-20">
+            <Tittle :scrollValue="scrollPosition" />
 
-            <h3
-                class="m-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white font-bold py-16 mt-1">
-                Visualizando el futuro de tus proyectos inmobiliarios
-            </h3>
+            <!--
 
             <div class="w-full h-20 mt-16 pt-16 bg-cyan-100"></div>
 
             <div class="relative max-w-6xl min-w-full px-6 py-12">
-                <!-- Fondo con efecto vidrio (glassmorphism) -->
+
                 <div class="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-b-2xl border border-white/10 w-full">
                 </div>
 
@@ -98,7 +96,9 @@ const services = [
                 <carrousel />
 
             </div>
+    -->
         </div>
+
     </div>
 
     <div class="w-full h-20 mt-16 pt-16 h-min:2000px"></div>
