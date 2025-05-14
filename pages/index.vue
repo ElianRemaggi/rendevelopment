@@ -1,13 +1,26 @@
 <script setup lang="ts">
-import Lenis from 'lenis';
-const lenis = new Lenis({
-    autoRaf: true,
-});
 
-// Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-    console.log(e);
-});
+import { useLenis } from 'lenis/vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+
+const scrollPosition = ref(0)
+const lenis = useLenis()
+
+const scrollHandler = ({ scroll }: { scroll: number }) => {
+    scrollPosition.value = Math.round(scroll)
+}
+
+onMounted(() => {
+    if (lenis.value) {
+        lenis.value.on('scroll', scrollHandler)
+    }
+})
+
+onUnmounted(() => {
+    if (lenis.value) {
+        lenis.value.destroy()
+    }
+})
 
 const services = [
     {
@@ -28,18 +41,15 @@ const services = [
     }
 ]
 
-
 </script>
 
 <template>
 
+    <ScrollPosition />
+
 
     <div class="wrapper w-full pb-16 ">
-        <div class="md:py-12 lg:py-16 xl:py-20 ">
-            <h1 id="tittle"
-                class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center text-white font-bold py-16 mt-1">
-                <u class="border-b-4 border-purple-500 pb-1">Rendevelopment</u>
-            </h1>
+        <div class="md:py-12 lg:py-16 xl:py-20">
 
             <h3
                 class="m-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white font-bold py-16 mt-1">
@@ -90,6 +100,8 @@ const services = [
             </div>
         </div>
     </div>
+
+    <div class="w-full h-20 mt-16 pt-16 h-min:2000px"></div>
 </template>
 
 <style scoped>
