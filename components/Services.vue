@@ -48,14 +48,15 @@ const shouldRender = computed(() => {
 
 <template>
     <div>
-        <div :class="shouldRender ? 'opacity-100' : 'opacity-0 pointer-events-none fade-out'"
+        <div :class="shouldRender ? 'opacity-100' : 'opacity-0 pointer-events-none fade-out-background'"
             class="fixed top-60 max-w-6xl min-w-full px-6 py-12">
 
-            <div :class="shouldRender ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5 fade-out'"
+            <div :class="shouldRender ? 'opacity-100 translate-y-0' : 'opacity-0  fade-out-background'"
                 class="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-b-2xl border border-white/10 w-full transition-all duration-700 ease-out">
             </div>
 
-            <div class="relative z-10">
+            <div class="relative z-10 "
+                :class="shouldRender ? 'opacity-100 translate-y-0' : 'opacity-0  fade-out'">
                 <h3 :class="props.scrollValue >= 1300 ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
                     Nuestros <span class="text-purple-300">Servicios</span>
@@ -91,5 +92,10 @@ const shouldRender = computed(() => {
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease-out;
+}
+
+.fade-out-background {
+    opacity: 0;
+    transition: opacity 2s ease-out;
 }
 </style>
