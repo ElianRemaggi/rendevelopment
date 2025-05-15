@@ -13,6 +13,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
       'ScrollPosition': typeof import("../components/ScrollPosition.vue")['default']
+    'Services': typeof import("../components/Services.vue")['default']
     'Carrousel': typeof import("../components/carrousel.vue")['default']
     'Tittle': typeof import("../components/tittle.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -40,6 +41,7 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyScrollPosition': LazyComponent<typeof import("../components/ScrollPosition.vue")['default']>
+    'LazyServices': LazyComponent<typeof import("../components/Services.vue")['default']>
     'LazyCarrousel': LazyComponent<typeof import("../components/carrousel.vue")['default']>
     'LazyTittle': LazyComponent<typeof import("../components/tittle.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
@@ -73,6 +75,7 @@ declare module 'vue' {
 }
 
 export const ScrollPosition: typeof import("../components/ScrollPosition.vue")['default']
+export const Services: typeof import("../components/Services.vue")['default']
 export const Carrousel: typeof import("../components/carrousel.vue")['default']
 export const Tittle: typeof import("../components/tittle.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -100,6 +103,7 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyScrollPosition: LazyComponent<typeof import("../components/ScrollPosition.vue")['default']>
+export const LazyServices: LazyComponent<typeof import("../components/Services.vue")['default']>
 export const LazyCarrousel: LazyComponent<typeof import("../components/carrousel.vue")['default']>
 export const LazyTittle: LazyComponent<typeof import("../components/tittle.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
