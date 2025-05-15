@@ -1,7 +1,11 @@
-<script setup>
+<script setup lang="ts">
 import { inject } from 'vue';
 
-const injectedScrollValue = inject('scrollValue');
+import type { Ref } from 'vue';
+
+const injectedScrollValue = inject<Ref<number>>('scrollValue', ref(0));
+
+// Computed property que usa la prop scrollValue
 const printScrollValue = () => {
     console.log('Scroll actual:', injectedScrollValue.value);
 };

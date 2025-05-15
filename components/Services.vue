@@ -1,16 +1,10 @@
 <script setup lang="ts">
 
-// Definición de props con TypeScript
-const props = defineProps({
-    scrollValue: {
-        type: Number,
-        required: true,
-        default: 0,
-        validator: (value: number) => {
-            return value >= 0
-        }
-    }
-})
+import { inject } from 'vue';
+
+import type { Ref } from 'vue';
+
+const injectedScroll = inject<Ref<number>>('scrollValue', ref(0));
 
 
 const ANIMATION_START = 1100 // Scroll donde comienza la animación
@@ -44,7 +38,7 @@ const services = [
 ]
 
 const shouldRender = computed(() => {
-    return props.scrollValue >= ANIMATION_START && props.scrollValue <= ANIMATION_END
+    return injectedScroll.value >= ANIMATION_START && injectedScroll.value <= ANIMATION_END
 })
 
 
@@ -61,14 +55,14 @@ const shouldRender = computed(() => {
 
             <div class="relative z-10 "
                 :class="shouldRender ? 'opacity-100 translate-y-0' : 'opacity-0  fade-out'">
-                <h3 :class="props.scrollValue >= 1300 ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                <h3 :class="injectedScroll >= 1300 ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
                     Nuestros <span class="text-purple-300">Servicios</span>
                 </h3>
 
                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
                     <li v-for="(service, index) in services" :key="index"
-                        :class="service.initialScrollValue <= props.scrollValue && service.finalScrollValue >= props.scrollValue ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                        :class="service.initialScrollValue <= injectedScroll && service.finalScrollValue >= injectedScroll ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                         class="group flex flex-col p-6 hover:bg-white/5 transition-all duration-300 rounded-xl">
                         <div
                             class="flex-shrink-0 p-3 bg-purple-500/20 rounded-lg group-hover:bg-purple-400/30 transition-all w-14 h-14 flex items-center justify-center mb-4">

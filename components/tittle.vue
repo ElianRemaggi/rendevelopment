@@ -1,27 +1,17 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { inject, computed } from 'vue'
+import type { Ref } from 'vue'
 import { gsap } from 'gsap'
 
-// Definición de props con TypeScript
-const props = defineProps({
-    scrollValue: {
-        type: Number,
-        required: true,
-        default: 0,
-        validator: (value: number) => {
-            return value >= 0
-        }
-    }
-})
-
+const injectedScrollValue = inject<Ref<number>>('scrollValue', ref(0));
 
 // Computed property que usa la prop scrollValue
 const shouldShowTitle = computed(() => {
-    return props.scrollValue >= 0 && props.scrollValue <= 1000
+    return injectedScrollValue.value >= 0 && injectedScrollValue.value <= 1000
 })
 
 const shouldShowSubTitle = computed(() => {
-    return props.scrollValue >= 100 && props.scrollValue <= 1000
+    return injectedScrollValue.value >= 100 && injectedScrollValue.value <= 1000
 })
 
 
@@ -34,7 +24,7 @@ const ANIMATION_END = 750   // Scroll donde termina la animación
 const ANIMATION_DURATION = ANIMATION_END - ANIMATION_START
 
 const animationProgress = computed(() => {
-    return Math.min(1, Math.max(0, (props.scrollValue - ANIMATION_START) / ANIMATION_DURATION));
+    return Math.min(1, Math.max(0, (injectedScrollValue.value - ANIMATION_START) / ANIMATION_DURATION));
 })
 
 watch(animationProgress, (progress) => {
