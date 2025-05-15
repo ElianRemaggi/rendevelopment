@@ -14,28 +14,32 @@ const props = defineProps({
 
 
 const ANIMATION_START = 1100 // Scroll donde comienza la animación
-const ANIMATION_END = 2500   // Scroll donde termina la animación
+const ANIMATION_END = 2800   // Scroll donde termina la animación
 
 const services = [
     {
         title: "Renderizados arquitectónicos 3D",
         description: "Imágenes fotorrealistas que muestran tus proyectos antes de construirlos",
-        scrollValue: 1400
+        initialScrollValue: 1400,
+        finalScrollValue: 2400
     },
     {
         title: "Tours virtuales interactivos",
         description: "Recorridos 360° que permiten explorar cada espacio",
-        scrollValue: 1600
+        initialScrollValue: 1600,
+        finalScrollValue: 2500
     },
     {
         title: "Maquetas digitales para pre-venta",
         description: "Modelos 3D interactivos para impulsar tus ventas",
-        scrollValue: 1800
+        initialScrollValue: 1800,
+        finalScrollValue: 2600
     },
     {
         title: "Visualizaciones para páginas web",
         description: "Integración perfecta de renderizados en tu sitio web",
-        scrollValue: 2000
+        initialScrollValue: 2000,
+        finalScrollValue: 2700
     }
 ]
 
@@ -64,7 +68,7 @@ const shouldRender = computed(() => {
 
                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
                     <li v-for="(service, index) in services" :key="index"
-                        :class="service.scrollValue <= props.scrollValue ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                        :class="service.initialScrollValue <= props.scrollValue && service.finalScrollValue >= props.scrollValue ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                         class="group flex flex-col p-6 hover:bg-white/5 transition-all duration-300 rounded-xl">
                         <div
                             class="flex-shrink-0 p-3 bg-purple-500/20 rounded-lg group-hover:bg-purple-400/30 transition-all w-14 h-14 flex items-center justify-center mb-4">
