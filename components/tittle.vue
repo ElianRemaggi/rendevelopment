@@ -21,7 +21,6 @@ const shouldShowTitle = computed(() => {
 })
 
 const shouldShowSubTitle = computed(() => {
-    console.log(props.scrollValue)
     return props.scrollValue >= 100 && props.scrollValue <= 1000
 })
 
