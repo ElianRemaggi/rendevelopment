@@ -47,7 +47,7 @@ const shouldRender = computed(() => {
 <template>
     <div>
         <div :class="shouldRender ? 'opacity-100' : 'opacity-0 pointer-events-none fade-out-background'"
-            class="fixed top-60 max-w-6xl min-w-full px-6 py-12">
+            class="fixed top-40 max-w-6xl min-w-full px-6 py-12">
 
             <div :class="shouldRender ? 'opacity-100 translate-y-0' : 'opacity-0  fade-out-background'"
                 class="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-b-2xl border border-white/10 w-full transition-all duration-700 ease-out">
