@@ -34,6 +34,7 @@ onUnmounted(() => {
         <div class="md:py-12 lg:py-16 xl:py-20">
             <Tittle/>
             <services />
+            <gallery />
             <!--
 
             <div class="w-full h-20 mt-16 pt-16 bg-cyan-100"></div>
