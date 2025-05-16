@@ -15,6 +15,7 @@ interface _GlobalComponents {
       'ScrollPosition': typeof import("../components/ScrollPosition.vue")['default']
     'Services': typeof import("../components/Services.vue")['default']
     'Carrousel': typeof import("../components/carrousel.vue")['default']
+    'Contact': typeof import("../components/contact.vue")['default']
     'Gallery': typeof import("../components/gallery.vue")['default']
     'Impacta': typeof import("../components/impacta.vue")['default']
     'Tittle': typeof import("../components/tittle.vue")['default']
@@ -45,6 +46,7 @@ interface _GlobalComponents {
       'LazyScrollPosition': LazyComponent<typeof import("../components/ScrollPosition.vue")['default']>
     'LazyServices': LazyComponent<typeof import("../components/Services.vue")['default']>
     'LazyCarrousel': LazyComponent<typeof import("../components/carrousel.vue")['default']>
+    'LazyContact': LazyComponent<typeof import("../components/contact.vue")['default']>
     'LazyGallery': LazyComponent<typeof import("../components/gallery.vue")['default']>
     'LazyImpacta': LazyComponent<typeof import("../components/impacta.vue")['default']>
     'LazyTittle': LazyComponent<typeof import("../components/tittle.vue")['default']>
@@ -81,6 +83,7 @@ declare module 'vue' {
 export const ScrollPosition: typeof import("../components/ScrollPosition.vue")['default']
 export const Services: typeof import("../components/Services.vue")['default']
 export const Carrousel: typeof import("../components/carrousel.vue")['default']
+export const Contact: typeof import("../components/contact.vue")['default']
 export const Gallery: typeof import("../components/gallery.vue")['default']
 export const Impacta: typeof import("../components/impacta.vue")['default']
 export const Tittle: typeof import("../components/tittle.vue")['default']
@@ -111,6 +114,7 @@ export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/
 export const LazyScrollPosition: LazyComponent<typeof import("../components/ScrollPosition.vue")['default']>
 export const LazyServices: LazyComponent<typeof import("../components/Services.vue")['default']>
 export const LazyCarrousel: LazyComponent<typeof import("../components/carrousel.vue")['default']>
+export const LazyContact: LazyComponent<typeof import("../components/contact.vue")['default']>
 export const LazyGallery: LazyComponent<typeof import("../components/gallery.vue")['default']>
 export const LazyImpacta: LazyComponent<typeof import("../components/impacta.vue")['default']>
 export const LazyTittle: LazyComponent<typeof import("../components/tittle.vue")['default']>
