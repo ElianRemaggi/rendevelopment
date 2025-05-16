@@ -64,12 +64,11 @@ const shouldRenderPlus = computed(() => {
                 </span>
             </div>
 
-            <!-- Contenedor de iconos - Ajusté el margen y altura -->
             <div class="flex flex-col items-center justify-center px-4 h-[50vh]" style="margin-top: -25vh;">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl w-full items-center relative">
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-0 max-w-6xl w-full items-center relative">
                     <!-- Panel izquierdo - Tus Ideas -->
                     <div :class="shouldRenderIdeas ? 'opacity-100' : 'opacity-0 pointer-events-none'"
-                        class="relative bg-white p-6 rounded-2xl transition-all duration-500 shadow-sm col-span-1 w-full">
+                        class="relative bg-white p-6 rounded-2xl transition-all duration-500 col-span-1 shadow-2xl shadow-purple-400 z-20">
                         <div class="gradiantBorder py-1">
                             <h3 class="my-12 text-center font-bold text-2xl md:text-3xl mb-4 text-gray-800">Tus Ideas
                             </h3>
@@ -79,19 +78,20 @@ const shouldRenderPlus = computed(() => {
                         </div>
                     </div>
 
-                    <!-- GIF del + en el centro -->
+                    <!-- GIF del + en el centro - Más grande y superpuesto -->
                     <div :class="shouldRenderPlus ? 'opacity-100' : 'opacity-0 pointer-events-none'"
-                        class="flex items-center justify-center col-span-1 z-10">
-                        <img src="@/assets/+.gif" class="w-24 h-24 object-contain" alt="Signo más animado">
+                        class="flex items-center justify-center z-30 mx-[-20px]"> <!-- Superposición de 20px -->
+                        <img src="@/assets/+.gif" class="w-48 h-48 object-contain" alt="Signo más animado">
+                        <!-- Tamaño aumentado -->
                     </div>
 
                     <!-- Panel derecho - Nuestras Habilidades -->
                     <div :class="shouldRenderIdeas ? 'opacity-100' : 'opacity-0 pointer-events-none'"
-                        class="relative bg-white p-6 rounded-2xl transition-all duration-500 shadow-sm col-span-1">
+                        class="relative bg-white p-6 rounded-2xl transition-all duration-500 shadow-2xl shadow-purple-400 col-span-1 z-20">
                         <div class="gradiantBorder py-1">
                             <h3 class="my-12 text-center font-bold text-2xl md:text-3xl mb-4 text-gray-800">Nuestras
                                 Habilidades</h3>
-                            <div class="flex justify-center space-x-4 ">
+                            <div class="flex justify-center space-x-4">
                                 <img src="@/assets/arquitecta.png" class="w-36 h-36 object-contain"
                                     alt="Icono arquitectura">
                                 <img src="@/assets/dev.png" class="w-36 h-36 object-contain mb-16"
