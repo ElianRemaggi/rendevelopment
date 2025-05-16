@@ -17,7 +17,7 @@ watch(lenis, (lenis) => {
 
 <template>
 
-  <div class="relative font-mono min-h-screen-10000 min-h-[10000px]">
+  <div class="relative font-mono min-h-screen-8000 min-h-[8000px]">
 
     <div class="fixed inset-0 -z-10 bg-[url('@/assets/cover.png')] bg-cover bg-center filter hue-rotate-1" />
 

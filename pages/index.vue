@@ -36,6 +36,7 @@ onUnmounted(() => {
             <services />
             <gallery />
             <impacta />
+            <contact />
             <!--
 
             <div class="w-full h-20 mt-16 pt-16 bg-cyan-100"></div>
