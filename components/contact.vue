@@ -20,11 +20,11 @@ const resetScroll = () => {
 
 <template>
     <div :class="shouldRender ? 'opacity-100' : 'opacity-0 pointer-events-none'"
-         class="fixed inset-0 rounded-3xl w-3/4 h-3/4 transition-opacity duration-1000 bg-black bg-opacity-70 flex flex-col items-center justify-center mx-auto my-auto left-0 right-0 top-0 bottom-0">
+         class="fixed inset-0 rounded-3xl w-3/4 h-3/4 transition-opacity duration-1000 bg-white/20 flex flex-col items-center justify-center mx-auto my-auto left-0 right-0 top-0 bottom-0">
 
         <!-- Texto de contacto con gradiente -->
         <div class="text-center mb-8">
-            <h2 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500">
+            <h2 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 via-purple-400 to-pink-500">
                 Contáctanos
             </h2>
             <a href="mailto:info@tudominio.com"
